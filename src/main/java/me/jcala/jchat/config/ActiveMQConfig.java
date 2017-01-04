@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
@@ -17,8 +18,8 @@ import java.util.Collections;
 @Configuration
 @EnableJms
 public class ActiveMQConfig {
-    private static final String DEFAULT_BROKER_URL = "tcp://localhost:61616";
-
+    private static final String BROKER_URL = "tcp://localhost:61616";
+    private static final String CURRENCY_QUEUE = "jchat_queue";
     @Bean
     public MessageConverter jacksonJmsMessageConverter() {
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
@@ -31,9 +32,17 @@ public class ActiveMQConfig {
     @Bean
     public ConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
-        connectionFactory.setBrokerURL(DEFAULT_BROKER_URL);
+        connectionFactory.setBrokerURL(BROKER_URL);
         connectionFactory.setTrustedPackages(Collections.singletonList("me.jcala.jchat"));
         return connectionFactory;
+    }
+
+    @Bean
+    public JmsTemplate jmsTemplate(){
+        JmsTemplate template = new JmsTemplate();
+        template.setConnectionFactory(connectionFactory());
+        template.setDefaultDestinationName(CURRENCY_QUEUE);
+        return template;
     }
 
     @Bean
