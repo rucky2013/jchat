@@ -8,12 +8,10 @@ Vue.use(Vuex);
 
 const now = new Date();
 const state = {
-  // 当前用户
   user: {
       name: 'coffce',
       img: '/static/jcala.jpg'
   },
-  // 会话列表
   sessions: [
       {
           id: 1,
@@ -40,9 +38,7 @@ const state = {
           messages: []
       }
   ],
-  // 当前选中的会话
   currentSessionId: 1,
-  // 过滤出只包含这个key的会话
   filterKey: ''
 }
 const store = new Vuex.Store({
