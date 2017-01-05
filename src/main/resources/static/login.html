@@ -49,7 +49,7 @@ input{
     border-radius: 4px;   
     background-color: #2D2D3F;   
 }   
-.but{   
+.submit{   
     width: 300px;   
     min-height: 20px;   
     display: block;   
@@ -67,10 +67,10 @@ input{
 <body>  
     <div id="login">  
         <h1>jchat</h1>  
-        <form method="post">  
-            <input type="text" required="required" placeholder="username" name="u"/>
-            <input type="password" required="required" placeholder="password ( just the same with username )" name="p"/>
-            <button class="but" type="submit">login</button>
+        <form method="post" action="/login.action">
+            <input type="text" required="required" placeholder="username" name="username"/>
+            <input type="password" required="required" placeholder="password ( just the same with username )" name="password"/>
+            <button class="submit" type="submit">login</button>
         </form>  
     </div>  
 </body>  
