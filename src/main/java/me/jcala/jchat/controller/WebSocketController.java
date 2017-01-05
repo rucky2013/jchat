@@ -1,4 +1,4 @@
-package me.jcala.jchat.ctrl;
+package me.jcala.jchat.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
