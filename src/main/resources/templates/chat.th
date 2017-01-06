@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>jchat</title>
     <style>
-        #user{
+        #data{
             display:none;
         }
         * {
@@ -34,9 +34,7 @@
     </style>
 </head>
 <body>
-<div id="user">
-
-</div>
+<div id="data">${data}</div>
 <div id="chat"></div>
 </body>
 </html>
