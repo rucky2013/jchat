@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>jchat</title>
     <style>
+        #user{
+            display:none;
+        }
         * {
             box-sizing: border-box;
         }
@@ -31,6 +34,9 @@
     </style>
 </head>
 <body>
+<div id="user">
+
+</div>
 <div id="chat"></div>
 </body>
 </html>

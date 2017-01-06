@@ -19,7 +19,7 @@ spring:
       enabled: true
       cache: false
       encoding: utf-8
-      suffix: .html
+      suffix: .th
       mode: HTML
     http:
         encoding.charset: UTF-8
