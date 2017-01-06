@@ -1,8 +1,10 @@
 package me.jcala.jchat.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class User {
     private String name;
     private String pass;
@@ -11,7 +13,5 @@ public class User {
     public User(String name,String img) {
         this.name=name;
         this.img=img;
-    }
-    public User() {
     }
 }
