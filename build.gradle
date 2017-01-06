@@ -65,6 +65,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-undertow:${springBootVersion}"
     //-----------------------------------JDK工具----------------------------------------
     compile 'org.projectlombok:lombok:1.16.12'
+    //-----------------------------------模板引擎----------------------------------------
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
     //-------------------------------------测试-----------------------------------------
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
     testCompile 'junit:junit:4.12'

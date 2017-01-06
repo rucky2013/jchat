@@ -15,6 +15,12 @@ server:
 logging:
     config: classpath:log4j2.xml
 spring:
+    thymeleaf:
+      enabled: true
+      cache: false
+      encoding: utf-8
+      suffix: .html
+      mode: HTML
     http:
         encoding.charset: UTF-8
         encoding.force: false
