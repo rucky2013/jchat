@@ -17,8 +17,6 @@ import InputText from './components/InputText';
 import Message from './components/Message';
 import List from './components/UserList';
 
-import SockJS from 'sockjs-client';
-import Stomp from 'stompjs';
 export default {
   name: 'chat',
   components: {
@@ -26,14 +24,18 @@ export default {
   },
   created () {
         this.$store.dispatch('initData');
+        var jsonData=document.getElementById("data").innerText;
+        console.log(jsonData);
+        /*
         var stomp = Stomp.over(new SockJS("/p2p"));
          var headers = {
         login: 'name',
         passcode: 'pass',
-    };
+        };
         stomp.connect(headers, function(frame) {
             stomp.subscribe("/user/queue/notifications", handleNotification);
         });
+        */
   }
 }
 </script>
