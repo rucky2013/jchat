@@ -17,8 +17,6 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer{
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/queue")
-                .setHeartbeatValue(new long[]{2000,2000});
-///        registry.setApplicationDestinationPrefixes("/app");
+        registry.enableSimpleBroker("/queue");
     }
 }

@@ -23,10 +23,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(securityInterceptor).addPathPatterns("/**").excludePathPatterns("/login","/login.action");//配置登录拦截器拦截路径
     }
-
+/*
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("login.html");
+        registry.addViewController("/login").setViewName("login.th");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 
@@ -34,5 +34,5 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void configurePathMatch(PathMatchConfigurer configurer) {
         super.configurePathMatch(configurer);
         configurer.setUseSuffixPatternMatch(false);
-    }
+    }*/
 }
