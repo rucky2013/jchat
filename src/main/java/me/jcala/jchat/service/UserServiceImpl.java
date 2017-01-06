@@ -35,6 +35,25 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    /*@Override
+    public int login(String name,String pass){
+        if (name==null||pass==null){
+            return -1;
+        }
+
+        if ("wood".equals(name ) && "wood".equals(pass)){
+            return 0;
+        }
+        if ("fire".equals(name) && "fire".equals(pass)){
+            return 1;
+
+        }
+        if ("gold".equals(name) && "gold".equals(pass)){
+            return 2;
+        }
+        return -1;
+    }
+*/
     @Override
     public void addSession(HttpServletRequest request, User user){
         HttpSession session = request.getSession(true);

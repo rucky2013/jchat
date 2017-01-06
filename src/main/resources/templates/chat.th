@@ -34,7 +34,7 @@
     </style>
 </head>
 <body>
-<div id="data">${data}</div>
+<div id="data" th:utext="${data}"></div>
 <div id="chat"></div>
 </body>
 </html>
