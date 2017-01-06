@@ -67,7 +67,7 @@ input{
 <body>  
     <div id="login">  
         <h1>jchat</h1>  
-        <form method="post" action="/login.action">
+        <form method="post" action="/login.action" name="user">
             <input type="text" required="required" placeholder="name (jchat)" name="name"/>
             <input type="password" required="required" placeholder="pass (123)" name="pass"/>
             <button class="submit" type="submit">login</button>

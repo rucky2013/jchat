@@ -2,9 +2,13 @@ package me.jcala.jchat.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import me.jcala.jchat.domain.User;
 import me.jcala.jchat.mock.InitData;
 import me.jcala.jchat.service.inster.UserService;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -30,4 +34,12 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+
+    @Override
+    public void addSession(HttpServletRequest request, User user){
+        HttpSession session = request.getSession(true);
+        session.setAttribute("cur_user",user);
+        session.setMaxInactiveInterval(1800);
+    }
+
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class UserController {
 
@@ -20,10 +22,11 @@ public class UserController {
     }
 
     @PostMapping("/login.action")
-    public String doLogin(@ModelAttribute User user, Model model){
+    public String doLogin(@ModelAttribute("user") User user, HttpServletRequest request, Model model){
         try {
             String data= userService.login(user.getName(),user.getPass());
             if (data!=null){
+                userService.addSession(request,user);
                 model.addAttribute("data",data);
             }
         } catch (JsonProcessingException e) {
