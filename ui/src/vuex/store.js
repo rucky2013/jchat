@@ -9,14 +9,14 @@ Vue.use(Vuex);
 const now = new Date();
 const state = {
   user: {
-      name: 'coffce',
+      name: 'water',
       img: '/static/jcala.jpg'
   },
   sessions: [
       {
           id: 1,
           user: {
-              name: 'kaxi',
+              name: 'fire',
               img: '/static/kaxi.jpg'
           },
           messages: [
@@ -32,7 +32,7 @@ const state = {
       {
           id: 2,
           user: {
-              name: 'paoying',
+              name: 'gold',
               img: '/static/paoying.jpg'
           },
           messages: []
