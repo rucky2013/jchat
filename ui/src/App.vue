@@ -27,18 +27,21 @@ export default {
   },
   created () {
          var jsonData=document.getElementById("data").innerText;
-         this.$store.dispatch('initWebData', JSON.parse(jsonData));
-         //var stomp = Stomp.over(new SockJS("/p2p"));
-        /*
-        var stomp = Stomp.over(new SockJS("/p2p"));
+         var jsonObj=JSON.parse(jsonData);
+         this.$store.dispatch('initWebData',jsonObj);
+         var stomp = Stomp.over(new SockJS('http://localhost:80/p2p'));
+         var username = jsonObj.user.name;
+         console.log(username);
          var headers = {
-        login: 'name',
-        passcode: 'pass',
-        };
-        stomp.connect(headers, function(frame) {
+            login: username,
+            passcode: 'pass',
+         };
+         stomp.connect(headers, function(frame) {
             stomp.subscribe("/user/queue/notifications", handleNotification);
         });
-        */
+        function handleNotification(message) {
+          alert('msg:'+message);
+        }
   }
 }
 </script>
