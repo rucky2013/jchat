@@ -6,6 +6,12 @@ export default {
         state.sessions = JSON.parse(data);
     }
   },
+  [types.INIT_DATA_FROM_WEB](state,jsonObj){
+     if(jsonObj){
+       state.user=jsonObj.user;
+       state.sessions=jsonObj.sessions;
+     }
+  },
   [types.SEND_MESSAGE]({ sessions, currentSessionId }, content){
     let session = sessions.find(item => item.id === currentSessionId);
     session.messages.push({

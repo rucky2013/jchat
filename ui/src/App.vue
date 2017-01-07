@@ -23,9 +23,8 @@ export default {
     Card,InputText,Message,List
   },
   created () {
-        this.$store.dispatch('initData');
-        var jsonData=document.getElementById("data").innerText;
-        console.log(jsonData);
+         var jsonData=document.getElementById("data").innerText;
+         this.$store.dispatch('initWebData', JSON.parse(jsonData));
         /*
         var stomp = Stomp.over(new SockJS("/p2p"));
          var headers = {
