@@ -1,9 +1,9 @@
 import * as types from './mutation-types'
 export default {
   [types.INIT_DATA](state){
-    let data = localStorage.getItem('jchat-session');
+    let data = localStorage.getItem('jchat-data');
     if (data) {
-        state.sessions = JSON.parse(data);
+        state=data;
     }
   },
   [types.INIT_DATA_FROM_WEB](state,jsonObj){
@@ -25,5 +25,8 @@ export default {
   },
    [types.SET_FILTER_KEY] (state, value) {
        state.filterKey = value;
-   }
+   },
+  [types.SAVE_DATA_BEFORE_CLOSED](state){
+    localStorage.setItem("jchat-data",state);
+  }
 }

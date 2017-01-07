@@ -18,3 +18,7 @@ export const selectSession = ({ commit }, id) => {
 export const search = ({ commit }, value) => {
   commit(types.SET_FILTER_KEY, value)
 }
+
+export const saveData= ({ commit }) => {
+  commit(types.SAVE_DATA_BEFORE_CLOSED)
+}

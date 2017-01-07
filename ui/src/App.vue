@@ -17,6 +17,9 @@ import InputText from './components/InputText';
 import Message from './components/Message';
 import List from './components/UserList';
 
+var Stomp = require('stompjs');
+import SockJS from 'sockjs-client';
+
 export default {
   name: 'chat',
   components: {
@@ -25,6 +28,7 @@ export default {
   created () {
          var jsonData=document.getElementById("data").innerText;
          this.$store.dispatch('initWebData', JSON.parse(jsonData));
+         //var stomp = Stomp.over(new SockJS("/p2p"));
         /*
         var stomp = Stomp.over(new SockJS("/p2p"));
          var headers = {
