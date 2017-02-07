@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        springBootPluginVersion = '1.4.2.RELEASE'
-        springBootVersion = '1.4.2.RELEASE'
+        springBootPluginVersion = '1.5.1.RELEASE'
+        springBootVersion = '1.5.1.RELEASE'
     }
     repositories {
         mavenLocal()
@@ -73,6 +73,6 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}"
     compile 'com.lmax:disruptor:3.3.6'
     //-----------------------------------消息队列----------------------------------------
-    compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
     compile 'org.apache.activemq:activemq-broker:5.14.3'
+    compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
 }

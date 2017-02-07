@@ -2,7 +2,6 @@ package me.jcala.jchat.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import me.jcala.jchat.domain.User;
-import me.jcala.jchat.service.UserServiceImpl;
 import me.jcala.jchat.service.inster.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
